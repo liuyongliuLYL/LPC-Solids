@@ -25,6 +25,10 @@ DATATYPE Gruneisen_EOS(int flag, int i, Cell_Value& C, Material_Constant& M)
     else if (flag == 2) {
         return Pr + big_gamma * C.density[i] * (C.i_energy[i] - er);
     }
+    else {
+        abort();
+        return -1;
+    }
 }
 
 DATATYPE Gruneisen_EOS1(int flag, int i, Cell_Value& C, Material_Constant& M)
@@ -45,6 +49,10 @@ DATATYPE Gruneisen_EOS1(int flag, int i, Cell_Value& C, Material_Constant& M)
         DATATYPE e = C.i_energy[i];
         return e * (_rho0 * _big_gamma0) + _rho0 * _a0 * _a0 * f;
     }
+    else {
+        abort();
+        return -1;
+    }
 }
 
 DATATYPE Perfect_Gas_EOS(int flag, int i, Cell_Value& C, Material_Constant& M)
@@ -57,6 +65,10 @@ DATATYPE Perfect_Gas_EOS(int flag, int i, Cell_Value& C, Material_Constant& M)
     }
     else if (flag == 3) {
         return 0;
+    }
+    else {
+        abort();
+        return -1;
     }
 }
 
@@ -71,6 +83,10 @@ DATATYPE cal_eos(int flag, int index, Cell_Value& C, Material_Constant& M)
     }
     else if (para.EOS_set == 2) {
         return Perfect_Gas_EOS(flag, index, C, M);
+    }
+    else {
+        abort();
+        return -1;
     }
 }
 

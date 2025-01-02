@@ -5,7 +5,7 @@ DATATYPE sound_velocity(DATATYPE d, DATATYPE p, DATATYPE dst, DATATYPE e, int i)
 	if (para.EOS_set == 2) {
 		return sqrt(M.big_gamma0[i] * p / d);
 	}
-	//Cheng, J.2015 A high-order cell-centered Lagrangian scheme for one-dimensional    3.1.1 （18）式
+	//Cheng, J.2015 A high-order cell-centered Lagrangian scheme for one-dimensional    3.1.1 （18）
 	DATATYPE _a0 = M.c0[i]; DATATYPE _s = M.s[i];
 	DATATYPE _mu = M.mu[i]; DATATYPE _big_gamma0 = M.big_gamma0[i]; DATATYPE _density0 = M.density_ini[i];
 	DATATYPE ita = d / _density0;

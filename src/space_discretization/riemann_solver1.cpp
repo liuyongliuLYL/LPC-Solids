@@ -130,7 +130,7 @@ void riemann_acoustic_1(Interface& IIx, Interface& reL_I, Interface& reR_I, int 
 		//IIx.big_phi_1[index] = 0;
 	}
 
-	//if ((index == 0) && para.alpha != 1 && para.offset == 0.0) {//中心区没有扰动
+	//if ((index == 0) && para.alpha != 1 && para.offset == 0.0) {
 	//	IIx.sigma_11[index] = 0;
 	//	IIx.sigma_22[index] = 0;
 	//	IIx.velocity[index] = 0;

@@ -66,7 +66,7 @@ void case_RMI_1D()
 	para.rbc = 0;
 	para.out_file_dir = "./Data/Out/";
 	para.IOmode = "bin";	para.store_steps = 1000;	para.printing = 100;
-	/*计算方案设置*/
+
 	para.alpha = 3;	
 	para.EOS_set = 2;
 	para.mode_space = 2;
@@ -277,7 +277,7 @@ void case_RTI_EE_cylindrical_and_spherical_geometry()
 
 	uniform_grid_m();
 
-	mesh_1.R_half[para.cells / tempx] = 1;  // 1000 667
+	mesh_1.R_half[(int)(para.cells / tempx)] = 1;  // 1000 667
 	//mesh_1.R_half[200] = 1;
 	for (int i = 1; i <= para.cells; ++i) {
 		//mesh_1.R_half[i] = exp(-1 * pow(mesh.R[i] - para.domain_len[0], 2));

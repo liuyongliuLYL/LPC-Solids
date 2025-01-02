@@ -28,7 +28,7 @@ struct Para {
 	REAL change_t = 1;
 	REAL change_p = 1;
 	int printing = 1;
-	/*计算方案*/
+
 	int mode_space = 1;	
 	int mode_riemann = 1;
 	REAL q;		
@@ -150,7 +150,7 @@ struct Cell_Value {
 	}
 };
 
-/*材料常数*/
+
 struct Material_Constant {
 	vector<DATATYPE> density_ini;		
 	vector<DATATYPE> volume_ini;
