@@ -1,6 +1,9 @@
 ﻿#include "../data/use_data.h"
 #include <iostream>
 #include <fstream>
+#include <filesystem>
+namespace fs = std::filesystem;
+
 std::ofstream outfile1, outfile2, outfile3, outfile4, outfile5, outfile6, outfile7, outfile8, outfile9, outfile10, outfile11;
 std::ofstream outfile12, outfile13, outfile14, outfile15, outfile16, outfile17;
 std::ofstream outfile18, outfile19, outfile20, outfile21, outfile22, outfile23;
@@ -9,6 +12,11 @@ using namespace std;
 
 void open_files(string IOmode)
 {
+	if (!fs::exists(para.out_file_dir)) {
+		std::cout << "Directory does not exist, creating it..." << std::endl;
+		fs::create_directories(para.out_file_dir);
+	}
+
 	if (IOmode == "bin") {
 		outfile1.open(para.out_file_dir + "density_all.dat", ios::out | ios::binary);
 		outfile2.open(para.out_file_dir + "velocity_all.dat", ios::out | ios::binary);
